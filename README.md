@@ -21,7 +21,7 @@ We have to design the following neural network
 
    MNIST Image
    
-  ![image](https://user-images.githubusercontent.com/70502759/136894254-985867cc-3884-4f65-be59-a08ade396416.png)
+  ![image](https://user-images.githubusercontent.com/70502759/136895005-4cb01984-b509-43cc-935b-7722036b413b.png)
   
   Random Number
     [[1,5,7,8,9] ,
