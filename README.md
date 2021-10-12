@@ -80,6 +80,38 @@ we have prepared the actual labels the can used for loss calculation after the m
         [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0.]])
 
+Model Summery
+   
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1            [-1, 6, 24, 24]             156
+         
+            Conv2d-2             [-1, 12, 8, 8]           1,812
+            Linear-3                   [-1, 20]             220
+            Linear-4                   [-1, 40]             840
+            Linear-5                  [-1, 120]          27,960
+            Linear-6                   [-1, 60]           7,260
+            Linear-7                   [-1, 29]           1,769
+================================================================
+
+ Total params: 40,017
+ 
+ Trainable params: 40,017
+
+ Non-trainable params: 0
+
+
+  Input size (MB): 0.03
+
+  Forward/backward pass size (MB): 0.03
+
+  Params size (MB): 0.15
+
+  Estimated Total Size (MB): 0.22
+
+
+
 ## Tech Stack
 
 **Client:** Python, Pytorch, Numpy
