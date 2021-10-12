@@ -19,8 +19,8 @@ We have to design the following neural network
 
 2> Input Data
 
-      MNIST Image
-![image](https://user-images.githubusercontent.com/70502759/136894254-985867cc-3884-4f65-be59-a08ade396416.png)
+  MNIST Image
+  ![image](https://user-images.githubusercontent.com/70502759/136894254-985867cc-3884-4f65-be59-a08ade396416.png)
       Random Number
           
          
