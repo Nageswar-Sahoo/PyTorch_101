@@ -17,7 +17,7 @@ We have to design the following neural network
 
 ![image](https://user-images.githubusercontent.com/70502759/136892002-fa6fad37-bab3-4f82-8a48-ef43557526b8.png)
 
-2> Input Data
+ Input Data
 
    MNIST Image
    
@@ -27,7 +27,7 @@ We have to design the following neural network
     [[1,5,7,8,9] ,
       [4,8,9,0]] 
       
-3>NN Structure 
+
       
           
          
