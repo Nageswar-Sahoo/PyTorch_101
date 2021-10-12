@@ -16,3 +16,13 @@ We have to design the following neural network
     the "sum" of this number with the random number and the input image to the network (predict 5 + 7 = 12)
 
 ![image](https://user-images.githubusercontent.com/70502759/136892002-fa6fad37-bab3-4f82-8a48-ef43557526b8.png)
+
+2> Input Data
+
+      MNIST Image
+         ![image](https://user-images.githubusercontent.com/70502759/136894254-985867cc-3884-4f65-be59-a08ade396416.png)
+      Random Number
+          
+         
+         
+
