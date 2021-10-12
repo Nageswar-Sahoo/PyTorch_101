@@ -24,6 +24,8 @@ We have to design the following neural network
   ![image](https://user-images.githubusercontent.com/70502759/136894254-985867cc-3884-4f65-be59-a08ade396416.png)
   
   Random Number
+    [[1,5,7,8,9] ,
+      [4,8,9,0]] 
           
          
          
