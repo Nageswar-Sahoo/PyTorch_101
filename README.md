@@ -26,6 +26,9 @@ We have to design the following neural network
   Random Number
     [[1,5,7,8,9] ,
       [4,8,9,0]] 
+      
+3>NN Structure 
+      
           
          
          
