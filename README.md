@@ -83,9 +83,7 @@ As we can predicate the maximum sum as 18 so including zero we have a total 19 c
 
 Model Summery
    
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-================================================================
+         Layer (type)               Output Shape         Param #
           
             Conv2d-1            [-1, 6, 24, 24]             156         
             Conv2d-2             [-1, 12, 8, 8]           1,812
@@ -94,56 +92,47 @@ Model Summery
             Linear-5                  [-1, 120]          27,960
             Linear-6                   [-1, 60]           7,260
             Linear-7                   [-1, 29]           1,769
-================================================================
 
- Total params: 40,017
-
- Trainable params: 40,017
-
- Non-trainable params: 0
-
-
-  Input size (MB): 0.03
-
-  Forward/backward pass size (MB): 0.03
-
-  Params size (MB): 0.15
-
-  Estimated Total Size (MB): 0.22
+    Total params: 40,017
+    Trainable params: 40,017
+    Non-trainable params: 0
+    Input size (MB): 0.03
+    Forward/backward pass size (MB): 0.03
+    Params size (MB): 0.15
+    Estimated Total Size (MB): 0.22
 
 
 Combined The Two Inputs
 
-Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
-Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in 1*232 one dimension vector . Again this passed through two linear layer and give the output of 1*29 shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
+ Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
+ Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in 1*232 one dimension vector . Again this passed through two linear layer and give the output of 1*29 shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
 
 
 
 Loss function
 
-Since this is a classification problem, the choice of loss function may seem obvious – the CrossEntropy loss with sigmoid or softmax . 
-Softmax makes all predicted probabilities sum to 1, so there couldn’t be several correct answers. In our case we need to have 2 class as prediction .The obvious solution here is to treat each prediction independently. 
-For example, using the Sigmoid function as a normalizer for each logit value separately. Here we have several correct labels and predicted probability for each label. 
-Now we can compare these probabilities with the probabilities of the correct labels (ones) using BCEWithLogitsLoss loss.
-
+ Since this is a classification problem, the choice of loss function may seem obvious – the CrossEntropy loss with sigmoid or softmax . 
+ Softmax makes all predicted probabilities sum to 1, so there couldn’t be several correct answers. In our case we need to have 2 class as prediction .The obvious solution here is to treat each prediction independently. 
+ For example, using the Sigmoid function as a normalizer for each logit value separately. Here we have several correct labels and predicted probability for each label. 
+ Now we can compare these probabilities with the probabilities of the correct labels (ones) using BCEWithLogitsLoss loss.
 
 Evaluation
 
- Actual Random Number
+Actual Random Number
 
 
     [8, 9, 3, 7, 0, 2, 5, 1, 4, 6]
 
- Actual Mnist Number
+Actual Mnist Number
 
     [0, 3, 5, 6, 3, 2, 5, 3, 9, 0]
 
- Actual Random Number Sum 
+Actual Random Number Sum 
 
 
     [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
 
- One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
+One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
 
         [[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
          1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
@@ -166,7 +155,7 @@ Evaluation
         [1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0.,
          0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]]
 
-  Model Prediction 
+Model Prediction 
 
  We have 29 class of prediction and we have divided initial 10 index as Mnist 
  prediction and remaining 19 index as Random Number SUM prediction
@@ -175,7 +164,7 @@ Evaluation
 
 
 
-  Mnist Number Prediction 
+Mnist Number Prediction 
 
 
        [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
@@ -244,11 +233,11 @@ Random Number Sum Prediction
          -4.1621e+00, -1.3014e+01, -9.1615e+00, -2.7350e+01]]
  
  
-  In the prediction we will use the maximum number index as a prediction label .
-  We have used ARGMAX to get the required predicted labels .
+In the prediction we will use the maximum number index as a prediction label .
+We have used ARGMAX to get the required predicted labels .
 
 
-  Mnist Predicted labels 
+Mnist Predicted labels 
 
 
       [0, 4, 5, 2, 3, 2, 5, 1, 9, 6]
@@ -258,7 +247,7 @@ Random Number Sum Predicted Labels
 
       [ 8, 13, 10,  7,  3,  4, 10,  9, 13,  7]
 
- We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
+We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
 
 
 ## Tech Stack
