@@ -39,7 +39,7 @@
 
     
       
-We have input image of shape 1*28*28 , where 28*28 is height and  weight of the image and  we have only one channel as it's a gray image 
+We have input image of shape (1,28,28), where 28*28 is height and  weight of the image and  we have only one channel as it's a gray image 
 We have a single random number which we have to add with the MNIST image number and will try to predicate the respective sum . 
 
 
@@ -105,7 +105,7 @@ Model Summery
 Combined The Two Inputs
 
  Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
- Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in 1*232 one dimension vector . Again this passed through two linear layer and give the output of 1*29 shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
+ Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in (1,232) one dimension vector . Again this passed through two linear layer and give the output of (1,29) shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
 
 
 
@@ -113,8 +113,7 @@ Loss function
 
  Since this is a classification problem, the choice of loss function may seem obvious – the CrossEntropy loss with sigmoid or softmax . 
  Softmax makes all predicted probabilities sum to 1, so there couldn’t be several correct answers. In our case we need to have 2 class as prediction .The obvious solution here is to treat each prediction independently. 
- For example, using the Sigmoid function as a normalizer for each logit value separately. Here we have several correct labels and predicted probability for each label. 
- Now we can compare these probabilities with the probabilities of the correct labels (ones) using BCEWithLogitsLoss loss.
+ For example, using the Sigmoid function as a normalizer for each logit value separately.  Now we can compare these probabilities with the probabilities of the correct labels (ones) using BCEWithLogitsLoss loss.
 
 Evaluation
 
