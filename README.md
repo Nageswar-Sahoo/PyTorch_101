@@ -39,7 +39,7 @@
 
     
       
-We have input image of shape (1,28,28), where 28*28 is height and  weight of the image and  we have only one channel as it's a gray image 
+We have input image of shape (1,28,28), where 28*28 is height and  weidht of the image and  we have only one channel as it's a gray image 
 We have a single random number which we have to add with the MNIST image number and will try to predicate the respective sum . 
 
 
