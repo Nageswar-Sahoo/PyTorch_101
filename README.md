@@ -16,7 +16,7 @@
 
  Input Data
 
-   MNIST Image
+  MNIST Image
    
 
 
@@ -59,8 +59,8 @@ Random Number converted to the one hot vector which can be used as an input to t
  
 
 
-As we can predicate maximum sum as 18 so including zero we have total 19 class of prediction for the sum and 10 class of prediction  for mnist number and total class is 29
-We have prepared the actual labels the can used for loss calculation after the model predicted handwritten mnist number and sum 
+As we can predicate the maximum sum as 18 so including zero we have a total 19 class of prediction for the sum and 10 class of prediction for mnist number and total class is 29. We have prepared the actual labels that can be used for loss calculation after the model predicted handwritten mnist number and sum.
+
 
       
     Actual Mnist Number 
@@ -132,23 +132,27 @@ Now we can compare these probabilities with the probabilities of the correct lab
 Evaluation
 ----------
 
- Random Number
+ Actual Random Number
+
  -------------
 
-[8, 9, 3, 7, 0, 2, 5, 1, 4, 6]
+    [8, 9, 3, 7, 0, 2, 5, 1, 4, 6]
 
- Mnist Number
+ Actual Mnist Number
+
  -------------
-[0, 3, 5, 6, 3, 2, 5, 3, 9, 0]
+    [0, 3, 5, 6, 3, 2, 5, 3, 9, 0]
 
- Random Number Sum 
+ Actual Random Number Sum 
+
  -----------------
 
- [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
+    [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
 
  One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
+
  -----------------------
-      [[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        [[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
          1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
          0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0.],
@@ -169,10 +173,11 @@ Evaluation
         [1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0.,
          0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]]
 
-    Model Prediction 
-    ----------------
+  Model Prediction 
 
-      [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
+  ----------------
+
+     [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
          -4.9235e+01, -1.8543e+00, -9.0359e+01, -5.7980e+00, -5.1865e+01,
          -5.0966e+01, -5.5155e+01, -4.4233e+01, -1.9949e+01, -1.8520e+01,
          -2.8645e+01, -7.8273e+00, -2.0659e+01,  3.0945e+00, -7.2129e+00,
@@ -235,8 +240,10 @@ Evaluation
 
 
   Mnist Number Prediction 
+
   -----------------------
-  [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
+
+       [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
          -4.9235e+01, -1.8543e+00, -9.0359e+01, -5.7980e+00, -5.1865e+01],
         [-4.2893e+00, -3.7112e+00, -2.0963e+00, -1.9110e+00,  2.3672e-01,
          -4.5074e+01, -1.4926e+00, -1.0237e+02, -1.0838e+01, -2.8298e+01],
@@ -256,6 +263,10 @@ Evaluation
          -6.0047e+00, -6.6920e+01, -4.4795e+00, -2.2539e+01,  5.2897e+00],
         [-7.1052e-01, -3.4157e+00, -3.2627e+00, -1.6148e+00, -4.3689e+00,
          -1.0538e+01, -5.0837e-01, -1.6286e+01, -3.3428e+00, -7.6199e+00]]
+
+Random Number Sum Prediction
+
+---------------------------
 
          [[-5.0966e+01, -5.5155e+01, -4.4233e+01, -1.9949e+01, -1.8520e+01,
          -2.8645e+01, -7.8273e+00, -2.0659e+01,  3.0945e+00, -7.2129e+00,
@@ -303,14 +314,18 @@ Evaluation
   We have used ARGMAX to get the required details .
 
 
-        Mnist Predicted labels :
+  Mnist Predicted labels 
 
-        [0, 4, 5, 2, 3, 2, 5, 1, 9, 6]
+  ---------------------
 
-        Random Number Sum Predicted Labels :
+      [0, 4, 5, 2, 3, 2, 5, 1, 9, 6]
 
-        [ 8, 13, 10,  7,  3,  4, 10,  9, 13,  7]
-        [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
+
+Random Number Sum Predicted Labels 
+
+----------------------------------
+
+      [ 8, 13, 10,  7,  3,  4, 10,  9, 13,  7]
 
  We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
 
