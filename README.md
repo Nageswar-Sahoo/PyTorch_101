@@ -1,5 +1,5 @@
 
-# Design below Neural Network Architecture
+# Design Below Neural Network Architecture
 
    take 2 inputs:
  
@@ -39,7 +39,7 @@
 
     
       
-We have input image of shape 1*28*28 , where 28*28 is height and weight of the image and the number of channel and we have only one as it's a gray channel 
+We have input image of shape 1*28*28 , where 28*28 is height and  weight of the image and  we have only one channel as it's a gray image 
 We have a single random number which we have to add with the MNIST image number and will try to predicate the respective sum . 
 
 
@@ -60,7 +60,7 @@ Random Number converted to the one hot vector which can be used as an input to t
 
 
 As we can predicate maximum sum as 18 so including zero we have total 19 class of prediction for the sum and 10 class of prediction  for mnist number and total class is 29
-we have prepared the actual labels the can used for loss calculation after the model predicted handwritten mnist number and sum .
+We have prepared the actual labels the can used for loss calculation after the model predicted handwritten mnist number and sum 
 
       
     Actual Mnist Number 
@@ -79,6 +79,7 @@ we have prepared the actual labels the can used for loss calculation after the m
         [0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0.]])
+
 
 Model Summery
    
@@ -113,6 +114,7 @@ Model Summery
 
 Combined The Two Inputs
 -----------------------
+
 Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
 Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in 1*232 one dimension vector . Again this passed through two linear layer and give the output of 1*29 shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
 
@@ -126,25 +128,26 @@ Softmax makes all predicted probabilities sum to 1, so there couldn’t be sever
 For example, using the Sigmoid function as a normalizer for each logit value separately. Here we have several correct labels and predicted probability for each label. 
 Now we can compare these probabilities with the probabilities of the correct labels (ones) using BCEWithLogitsLoss loss.
 
+
 Evaluation
 ----------
 
-Random Number
--------------
+ Random Number
+ -------------
 
 [8, 9, 3, 7, 0, 2, 5, 1, 4, 6]
 
-Mnist Number
--------------
+ Mnist Number
+ -------------
 [0, 3, 5, 6, 3, 2, 5, 3, 9, 0]
 
-Random Number Sum 
------------------
+ Random Number Sum 
+ -----------------
 
-[ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
+ [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
 
-One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
------------------------
+ One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
+ -----------------------
       [[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
          1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
@@ -231,9 +234,9 @@ One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer
          -4.1621e+00, -1.3014e+01, -9.1615e+00, -2.7350e+01]]
 
 
-Mnist Number Prediction 
------------------------
-[[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
+  Mnist Number Prediction 
+  -----------------------
+  [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
          -4.9235e+01, -1.8543e+00, -9.0359e+01, -5.7980e+00, -5.1865e+01],
         [-4.2893e+00, -3.7112e+00, -2.0963e+00, -1.9110e+00,  2.3672e-01,
          -4.5074e+01, -1.4926e+00, -1.0237e+02, -1.0838e+01, -2.8298e+01],
@@ -296,11 +299,11 @@ Mnist Number Prediction
          -4.1621e+00, -1.3014e+01, -9.1615e+00, -2.7350e+01]]
  
  
- In the prediction array we will use the maximum number index as a prediction .
- We have used ARGMAX to get the required details .
+  In the prediction array we will use the maximum number index as a prediction .
+  We have used ARGMAX to get the required details .
 
 
-            Mnist Predicted labels :
+        Mnist Predicted labels :
 
         [0, 4, 5, 2, 3, 2, 5, 1, 9, 6]
 
@@ -309,10 +312,7 @@ Mnist Number Prediction
         [ 8, 13, 10,  7,  3,  4, 10,  9, 13,  7]
         [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
 
-We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
-
-
-
+ We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
 
 Evaluate with the Test data
 ---------------------------
