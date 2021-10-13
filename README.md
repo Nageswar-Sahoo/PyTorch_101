@@ -113,7 +113,6 @@ Model Summery
 
 
 Combined The Two Inputs
------------------------
 
 Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
 Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in 1*232 one dimension vector . Again this passed through two linear layer and give the output of 1*29 shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
@@ -121,7 +120,6 @@ Random number we have passed through two Linear neural layer and concatenated bo
 
 
 Loss function
--------------
 
 Since this is a classification problem, the choice of loss function may seem obvious – the CrossEntropy loss with sigmoid or softmax . 
 Softmax makes all predicted probabilities sum to 1, so there couldn’t be several correct answers. In our case we need to have 2 class as prediction .The obvious solution here is to treat each prediction independently. 
@@ -130,28 +128,23 @@ Now we can compare these probabilities with the probabilities of the correct lab
 
 
 Evaluation
-----------
 
  Actual Random Number
 
- -------------
 
     [8, 9, 3, 7, 0, 2, 5, 1, 4, 6]
 
  Actual Mnist Number
 
- -------------
     [0, 3, 5, 6, 3, 2, 5, 3, 9, 0]
 
  Actual Random Number Sum 
 
- -----------------
 
     [ 8, 12,  8, 13,  3,  4, 10,  4, 13,  6]
 
  One Hot Represenatation (Initial 10 digit refer to mnist and Next 19 digit refer to SUM)
 
- -----------------------
         [[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
          1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
         [0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
@@ -184,7 +177,6 @@ Evaluation
 
   Mnist Number Prediction 
 
-  -----------------------
 
        [[ 2.6619e+00, -1.0955e+01, -1.1669e+01, -6.3555e+00, -2.2778e+01,
          -4.9235e+01, -1.8543e+00, -9.0359e+01, -5.7980e+00, -5.1865e+01],
@@ -209,7 +201,6 @@ Evaluation
 
 Random Number Sum Prediction
 
----------------------------
 
          [[-5.0966e+01, -5.5155e+01, -4.4233e+01, -1.9949e+01, -1.8520e+01,
          -2.8645e+01, -7.8273e+00, -2.0659e+01,  3.0945e+00, -7.2129e+00,
@@ -259,22 +250,15 @@ Random Number Sum Prediction
 
   Mnist Predicted labels 
 
-  ---------------------
 
       [0, 4, 5, 2, 3, 2, 5, 1, 9, 6]
 
 Random Number Sum Predicted Labels 
 
-----------------------------------
 
       [ 8, 13, 10,  7,  3,  4, 10,  9, 13,  7]
 
  We can see the model did correct prediction for 6 Mnist Number and 5 correct prediction for random number sum .
-
-Evaluate with the Test data
----------------------------
-
-
 
 
 ## Tech Stack
