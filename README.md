@@ -108,6 +108,20 @@ Prediction at final Layer :
 
 After 10 epoch of training :
 
+Iterations vs Loss:
+
+![image](https://user-images.githubusercontent.com/70502759/211010939-610f6944-0a06-40f6-a479-be25acb13c7c.png)
+
+
+Iterations vs Accuracy Number:
+
+![image](https://user-images.githubusercontent.com/70502759/211010971-fbdc67a4-cd59-429d-978c-fe2698bfe879.png)
+
+
+
+Iterations vs Accuracy Number Addition:
+
+![image](https://user-images.githubusercontent.com/70502759/211011025-dc89d193-b590-44d5-b8cf-d3010be95ba3.png)
    
 
 After 100 epoch of training :
