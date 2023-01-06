@@ -106,8 +106,7 @@ FashionCNNI(
 
 Combined The Two Inputs
 
- Initially we have passed through  conv layers   and we have extracted the feature map. We have passed feature map into linear neural layer of output size(input 120, output 20) . 
- Random number we have passed through one Linear neural layer of output size(input 10,output 20) and concatenated both the outputs which resulted in (input 40,output 20) one dimension vector . Again this passed through two linear layer and give the output of (1,29) shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
+ Initially we have passed through  conv layers   and we have extracted the feature map. We have passed feature map into linear neural layer of output size(input 120, output 20) .  Random number we have passed through one Linear neural layer of output size(input 10,output 20) and concatenated both the outputs(20+20)and passed through linear layer  which resulted in output size (input 40,output 20) one dimension vector . Again this passed through two linear layer and give the two output of one representing the number prediction and other prediction is addition with random number . Hence model forward function return 2 output .
 
 
 
