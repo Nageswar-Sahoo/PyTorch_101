@@ -80,28 +80,7 @@ As we can predicate the maximum sum as 18 so including zero we have a total 19 c
 
 Model Summery
    
-FashionCNNI(
-  (layer1): Sequential(
-    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
-    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Linear(in_features=2304, out_features=600, bias=True)
-  (drop): Dropout2d(p=0.25, inplace=False)
-  (fc2): Linear(in_features=600, out_features=120, bias=True)
-  (fc3): Linear(in_features=120, out_features=20, bias=True)
-  (fc3_a): Linear(in_features=10, out_features=20, bias=True)
-  (fc5_a): Linear(in_features=40, out_features=20, bias=True)
-  (out): Linear(in_features=20, out_features=10, bias=True)
-  (out_a): Linear(in_features=20, out_features=19, bias=True)
-)
+![image](https://user-images.githubusercontent.com/70502759/211008908-3b311018-f0d9-4b19-875b-a1fa29275c2e.png)
 
 
 Combined The Two Inputs
