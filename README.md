@@ -27,13 +27,10 @@
   
   We have generate the random number dynamically with the help of following function by giving the batchsize 
      
-      def getRandomNumber(batchsize):
-         return random.sample(range(0, 10), batchsize)
-      
-         
-      getRandomNumber(10)   
-   
-      [9, 0, 3, 7, 8, 5, 4, 1, 2, 6]
+     from random import randint
+     randint(0,9)        
+     
+     [9, 0, 3, 7, 8, 5, 4, 1, 2, 6]
       
      
 
@@ -83,29 +80,34 @@ As we can predicate the maximum sum as 18 so including zero we have a total 19 c
 
 Model Summery
    
-         Layer (type)               Output Shape         Param #
-          
-            Conv2d-1            [-1, 6, 24, 24]             156         
-            Conv2d-2             [-1, 12, 8, 8]           1,812
-            Linear-3                   [-1, 20]             220
-            Linear-4                   [-1, 40]             840
-            Linear-5                  [-1, 120]          27,960
-            Linear-6                   [-1, 60]           7,260
-            Linear-7                   [-1, 29]           1,769
-
-    Total params: 40,017
-    Trainable params: 40,017
-    Non-trainable params: 0
-    Input size (MB): 0.03
-    Forward/backward pass size (MB): 0.03
-    Params size (MB): 0.15
-    Estimated Total Size (MB): 0.22
+FashionCNNI(
+  (layer1): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Linear(in_features=2304, out_features=600, bias=True)
+  (drop): Dropout2d(p=0.25, inplace=False)
+  (fc2): Linear(in_features=600, out_features=120, bias=True)
+  (fc3): Linear(in_features=120, out_features=20, bias=True)
+  (fc3_a): Linear(in_features=10, out_features=20, bias=True)
+  (fc5_a): Linear(in_features=40, out_features=20, bias=True)
+  (out): Linear(in_features=20, out_features=10, bias=True)
+  (out_a): Linear(in_features=20, out_features=19, bias=True)
+)
 
 
 Combined The Two Inputs
 
- Initially we have passed through 2 conv layers  (Conv2d-1  [-1, 6, 24, 24] , Conv2d-2  [-1, 12, 8, 8]) and we have extracted the feature map. We have flatted the feature map into one dimension vector of shape(1,192) . 
- Random number we have passed through two Linear neural layer and concatenated both the outputs which resulted in (1,232) one dimension vector . Again this passed through two linear layer and give the output of (1,29) shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
+ Initially we have passed through  conv layers   and we have extracted the feature map. We have passed feature map into linear neural layer of output size(input 120, output 20) . 
+ Random number we have passed through one Linear neural layer of output size(input 10,output 20) and concatenated both the outputs which resulted in (input 40,output 20) one dimension vector . Again this passed through two linear layer and give the output of (1,29) shapes where the initial 10 digit refer to the mnist prediction and last 19 digit refer to the sum with the random number .  
 
 
 
